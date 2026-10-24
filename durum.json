@@ -7,7 +7,7 @@
     "hiredAt": 1792873752629,
     "salary": 60000,
     "morale": 70,
-    "moraleUpdatedAt": 1792873752629,
+    "moraleUpdatedAt": 1792873764625,
     "lastPaidAt": null,
     "totalPaid": 0,
     "totalBonus": 0,
@@ -16,11 +16,11 @@
   },
   "desks": [
     {
-      "sessionId": null,
-      "status": "idle",
+      "sessionId": "test-kontrol",
+      "status": "waiting",
       "task": "",
-      "since": 0,
-      "lastActivity": 0
+      "since": 1792873764625,
+      "lastActivity": 1792873764625
     },
     {
       "sessionId": null,
@@ -32,6 +32,11 @@
   ],
   "gestures": [],
   "log": [
+    {
+      "t": 1792873764625,
+      "type": "wait",
+      "text": "Claude patrondan onay bekliyor."
+    },
     {
       "t": 1792873752629,
       "type": "hire",
