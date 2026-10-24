@@ -1,0 +1,44 @@
+name: Ofis
+
+on:
+  issues:
+    types: [opened]
+  schedule:
+    - cron: '17 */3 * * *' # moral kayması ve uyuyakalma için 3 saatte bir yenile
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: ofis
+  cancel-in-progress: false
+
+jobs:
+  ofis:
+    # Sadece repo sahibi (patron) komut verebilir.
+    if: github.event_name != 'issues' || github.event.issue.user.login == github.repository_owner
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Komutu işle
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          CEVAP_FILE: ${{ runner.temp }}/cevap.md
+        run: node ofis/komut.js
+
+      - name: Claude cevap versin
+        if: github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+          CEVAP_FILE: ${{ runner.temp }}/cevap.md
+        run: |
+          if [ -s "$CEVAP_FILE" ]; then
+            gh issue comment "$NUMBER" --repo "$GITHUB_REPOSITORY" --body-file "$CEVAP_FILE"
+            gh issue close "$NUMBER" --repo "$GITHUB_REPOSITORY"
+          fi

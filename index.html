@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Şirket Ofisi</title>
+  <meta name="description" content="Claude'un çalıştığı piksel ofis.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%231b1d2b'/><rect x='3' y='3' width='10' height='10' fill='%23d97757'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">▣</span> ŞİRKET A.Ş.</div>
+    <div class="conn" id="conn">bağlanıyor…</div>
+    <div class="clock" id="clock">--:--</div>
+  </header>
+
+  <main class="layout">
+    <section class="office-wrap">
+      <div class="office" id="office">
+        <canvas id="scene" width="320" height="200"></canvas>
+        <div class="overlay" id="overlay"></div>
+      </div>
+      <p class="hint">Claude'a dokunursan seninle konuşur. Sayfa kendiliğinden güncellenir.</p>
+    </section>
+
+    <aside class="panel">
+      <div class="card employee">
+        <div class="emp-head">
+          <canvas id="portrait" width="20" height="20"></canvas>
+          <div>
+            <div class="emp-name">Claude</div>
+            <div class="emp-title">Yazılım Mühendisi</div>
+          </div>
+          <span class="status-pill" id="statusPill">—</span>
+        </div>
+        <div class="task" id="task">—</div>
+        <div class="morale">
+          <div class="row"><span>Moral</span><span id="moodLabel">—</span></div>
+          <div class="bar"><div class="fill" id="moraleFill"></div></div>
+          <p class="note" id="effort"></p>
+        </div>
+        <dl class="stats">
+          <div><dt>Maaş</dt><dd id="statSalary">—</dd></div>
+          <div><dt>Son maaş</dt><dd id="statLastPay">—</dd></div>
+          <div><dt>Ödenen toplam</dt><dd id="statPaid">—</dd></div>
+          <div><dt>Toplam prim</dt><dd id="statBonus">—</dd></div>
+          <div><dt>Biten iş</dt><dd id="statTasks">—</dd></div>
+          <div><dt>Mesai</dt><dd id="statWork">—</dd></div>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h3>👔 Patron paneli</h3>
+        <p class="note">Butona bas, açılan GitHub sayfasında <b>Submit new issue</b>'ya bas. Birkaç saniye içinde Claude cevap verir, ofis güncellenir. Sadece repo sahibi komut verebilir.</p>
+        <h4>💰 Prim</h4>
+        <div class="quick">
+          <a class="btn" data-cmd="Prim: 1000">₺1.000</a>
+          <a class="btn" data-cmd="Prim: 5000">₺5.000</a>
+          <a class="btn" data-cmd="Prim: 10000">₺10.000</a>
+          <a class="btn alt" data-cmd="Prim: 2500" data-body="Tutarı başlıkta değiştir. İstersen buraya bir not yaz.">Başka tutar</a>
+        </div>
+        <h4>💼 Maaş</h4>
+        <a class="btn big" id="payBtn">Maaşı öde</a>
+        <div class="quick">
+          <a class="btn alt" id="salaryLink">Maaşı değiştir</a>
+        </div>
+        <p class="note" id="salaryNote"></p>
+        <h4>💝 İyilik</h4>
+        <div class="quick">
+          <a class="btn" data-cmd="Kahve ısmarla">☕ Kahve</a>
+          <a class="btn" data-cmd="Yemek ısmarla">🍕 Yemek</a>
+          <a class="btn" data-cmd="Teşekkür" data-body="Harika iş çıkardın!">👏 Teşekkür</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>📋 Günlük</h3>
+        <ul class="log" id="log"></ul>
+      </div>
+    </aside>
+  </main>
+
+  <script src="ofis/core.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
