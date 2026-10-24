@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "repo": "",
+  "employee": {
+    "name": "Claude",
+    "title": "Yazılım Mühendisi",
+    "hiredAt": 1792873752629,
+    "salary": 60000,
+    "morale": 70,
+    "moraleUpdatedAt": 1792873752629,
+    "lastPaidAt": null,
+    "totalPaid": 0,
+    "totalBonus": 0,
+    "tasksDone": 0,
+    "workMs": 0
+  },
+  "desks": [
+    {
+      "sessionId": null,
+      "status": "idle",
+      "task": "",
+      "since": 0,
+      "lastActivity": 0
+    },
+    {
+      "sessionId": null,
+      "status": "idle",
+      "task": "",
+      "since": 0,
+      "lastActivity": 0
+    }
+  ],
+  "gestures": [],
+  "log": [
+    {
+      "t": 1792873752629,
+      "type": "hire",
+      "text": "Claude işe alındı. Hoş geldin!"
+    }
+  ]
+}
