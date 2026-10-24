@@ -6,10 +6,10 @@
     "title": "Yazılım Mühendisi",
     "hiredAt": 1792873752629,
     "salary": 60000,
-    "morale": 74,
-    "moraleUpdatedAt": 1792873965329,
-    "lastPaidAt": 1792873965329,
-    "totalPaid": 60000,
+    "morale": 77.99982229401255,
+    "moraleUpdatedAt": 1792873988948,
+    "lastPaidAt": 1792873988948,
+    "totalPaid": 120000,
     "totalBonus": 0,
     "tasksDone": 0,
     "workMs": 5666
@@ -32,6 +32,13 @@
   ],
   "gestures": [
     {
+      "t": 1792873988948,
+      "type": "pay",
+      "text": "₺60.000 maaşını yatırdı",
+      "amount": 60000,
+      "thanked": false
+    },
+    {
       "t": 1792873965329,
       "type": "pay",
       "text": "₺60.000 maaşını yatırdı",
@@ -40,6 +47,11 @@
     }
   ],
   "log": [
+    {
+      "t": 1792873988948,
+      "type": "pay",
+      "text": "₺60.000 maaş yatırıldı."
+    },
     {
       "t": 1792873965329,
       "type": "pay",
