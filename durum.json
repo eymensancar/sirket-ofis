@@ -7,19 +7,19 @@
     "hiredAt": 1792873752629,
     "salary": 60000,
     "morale": 70,
-    "moraleUpdatedAt": 1792873764625,
+    "moraleUpdatedAt": 1792873770291,
     "lastPaidAt": null,
     "totalPaid": 0,
     "totalBonus": 0,
     "tasksDone": 0,
-    "workMs": 0
+    "workMs": 5666
   },
   "desks": [
     {
-      "sessionId": "test-kontrol",
-      "status": "waiting",
+      "sessionId": null,
+      "status": "idle",
       "task": "",
-      "since": 1792873764625,
+      "since": 0,
       "lastActivity": 1792873764625
     },
     {
